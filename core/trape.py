@@ -22,8 +22,8 @@ from core.utils import utils
 class Trape(object):
 	def __init__(self):
 		self.name_trape = "trape"
-		self.stats_path = "s" + utils.generateToken(6)
-		self.home_path = "h" + utils.generateToken(18)
+		self.stats_path = f"s{utils.generateToken(6)}"
+		self.home_path = f"h{utils.generateToken(18)}"
 		self.stats_key = utils.generateToken(24)
 		self.date_start = time.strftime("%Y-%m-%d - %H:%M:%S")
 		parser = optparse.OptionParser("python" + " " + "%prog -u <<Url>> -p <<Port>>", version="1.0.0")
@@ -57,7 +57,7 @@ class Trape(object):
 
 	# Important: in the process of use is possible that will ask for the root
 	def rootConnection(self):
-		if sys.platform != "win32" and sys.platform != "cygwin":
+		if sys.platform not in ["win32", "cygwin"]:
 			if os.getuid() != 0:
 				utils.Go("\t" + "--------------------")
 				utils.Go("\t" + "> Welcome to " + self.name_trape + " <")

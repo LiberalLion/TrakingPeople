@@ -70,7 +70,7 @@ def disconnect_request(d):
 def error_handler(e):
     pass
 
-@app.route("/" + trape.home_path)
+@app.route(f"/{trape.home_path}")
 def home():
     return render_template("home.html", async_mode=socketio.async_mode)
 

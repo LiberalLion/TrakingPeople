@@ -26,7 +26,7 @@ db = Database()
 # preview header tool in console
 trape.header()
 
-@app.route("/" + trape.stats_path)
+@app.route(f"/{trape.stats_path}")
 def index():
     return render_template("/login.html")
 

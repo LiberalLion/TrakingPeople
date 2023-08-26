@@ -22,7 +22,7 @@
                                               #
 from core.utils import utils                  #
 from core.trape import Trape
-from core.db import Database                  
+from core.db import Database
 try:                                          #
     import flask                              #
     import flask_socketio                     #
@@ -47,9 +47,22 @@ trackPeople.rootConnection()
 generateData.loadDatabase()
 
 if __name__ == "__main__":
-        try:
-        	# General expression this is expressed after the root
-        	trackPeople.main()
-        except Exception as error:
+    try:
+        # General expression this is expressed after the root
+        trackPeople.main()
+    except Exception as error:
         	# Result of error
-        	utils.Go(utils.Color['white'] + "[" + utils.Color['redBold'] + "x" + utils.Color['white'] + "]" + utils.Color['red'] + " " + "Error:" + " " + utils.Color['white'] + "%s" % error)
+        utils.Go(
+            utils.Color['white']
+            + "["
+            + utils.Color['redBold']
+            + "x"
+            + utils.Color['white']
+            + "]"
+            + utils.Color['red']
+            + " "
+            + "Error:"
+            + " "
+            + utils.Color['white']
+            + f"{error}"
+        )
